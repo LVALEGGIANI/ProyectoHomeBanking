@@ -1,6 +1,6 @@
 //Declaración de variables
 
-var nombreUsuario = "";
+var nombreUsuario = localStorage.getItem('usuario');
 var saldoCuenta = 58000;
 var limiteExtraccion = 5000;
 var servicioAgua = 350;
@@ -9,27 +9,27 @@ var servicioLuz = 210;
 var servicioInternet = 570;
 var CBU1 = 123456;
 var CBU2 = 654321;
-var max = 9999;
-var min = 1111;
-var codigoDeSeguridad = Math.floor((Math.random() * (max - min + 1)) + min);
-
-function solicitarCodigo() {
-    usuario = prompt("Ingrese su usuario")
-    codigo = parseInt(prompt("Ingrese el siguiente codigo: " + codigoDeSeguridad))
-    if (codigo == codigoDeSeguridad) {
-    nombreUsuario = usuario;
-    cargarNombreEnPantalla();
-    actualizarSaldoEnPantalla();
-    actualizarLimiteEnPantalla();
-    }
-    else 
-    extraccion = saldoCuenta
-    restarDinero()
-    cargarNombreEnPantalla();
-    actualizarSaldoEnPantalla();
-    actualizarLimiteEnPantalla();
-    alert ("Codigo incorrecto. Por razones de seguridad, le hemos congelado el dinero de su cuenta")
-}
+//var max = 9999;
+//var min = 1111;
+//var codigoDeSeguridad = Math.floor((Math.random() * (max - min + 1)) + min);
+//
+//function solicitarCodigo() {
+//    usuario = prompt("Ingrese su usuario")
+//    codigo = parseInt(prompt("Ingrese el siguiente codigo: " + codigoDeSeguridad))
+//    if (codigo == codigoDeSeguridad) {
+//    nombreUsuario = usuario;
+//    cargarNombreEnPantalla();
+//    actualizarSaldoEnPantalla();
+//    actualizarLimiteEnPantalla();
+//    }
+//    else 
+//    extraccion = saldoCuenta
+//    restarDinero()
+//    cargarNombreEnPantalla();
+//    actualizarSaldoEnPantalla();
+//    actualizarLimiteEnPantalla();
+//    alert ("Codigo incorrecto. Por razones de seguridad, le hemos congelado el dinero de su cuenta")
+//}
 
 function sumarDinero() {
     saldoCuenta = parseInt(saldoCuenta + deposito);
@@ -45,7 +45,7 @@ function cambioLimite() {
 
 //Ejecución de las funciones que actualizan los valores de las variables en el HTML.
 window.onload = function() {
-    solicitarCodigo();
+//    solicitarCodigo();
     cargarNombreEnPantalla();
     actualizarSaldoEnPantalla();
     actualizarLimiteEnPantalla();
