@@ -9,7 +9,7 @@ function alertCodigo () {
 window.onload = alertCodigo ()
 
 var botonlogin = document.getElementById('botonlogin')
-botonlogin.addEventListener('click',function login() {
+botonlogin.addEventListener('click',function login(e) {
     password = parseInt (document.getElementById('password').value)
     if (password == codigoDeSeguridad) {
         var usuario = document.getElementById('usuario').value;
@@ -17,4 +17,6 @@ botonlogin.addEventListener('click',function login() {
         document.form.submit ()
     }
     else alert ("Codigo incorrecto")
+
+    e.preventDefault();
 })
