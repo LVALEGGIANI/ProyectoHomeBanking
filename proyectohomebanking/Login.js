@@ -10,13 +10,14 @@ window.onload = alertCodigo ()
 
 var botonlogin = document.getElementById('botonlogin')
 botonlogin.addEventListener('click',function login(e) {
-    password = parseInt (document.getElementById('password').value)
+    password = document.getElementById('password').value
     if (password == codigoDeSeguridad) {
         var usuario = document.getElementById('usuario').value;
         localStorage.setItem('usuario', usuario)
         document.form.submit ()
     }
-    else alert ("Codigo incorrecto")
-
-    e.preventDefault();
+    else {
+        localStorage.removeItem('usuario')
+        alert ("Codigo incorrecto, te hemos removido todo el dinero de tu cuenta")
+    }
 })
